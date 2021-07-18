@@ -1,3 +1,0 @@
----
-# defaults file for ssh-key-rotation
-ansible_user : "hpansl01"

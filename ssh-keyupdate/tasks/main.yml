@@ -1,0 +1,23 @@
+---
+- name: create dir if it doesnt exists
+  file:
+   path: /home/{{ user }}/.ssh/
+   state: directory
+
+- name: creare autherization key
+  copy:
+   content: ""
+   dest: /home/{{ user }}/.ssh/authorized_keys
+   force: no
+      
+- name: copy the new keyfile to hosts
+  copy:
+    src: "files/id_rsa.pub"
+    dest: "/home/{{ user }}/.ssh/id_rsa.pub"
+    follow: yes   # to overwrite existing Key Content
+  
+- name: Set authorized key taken from file
+  authorized_key:
+    user: "{{ user }}"
+    state: present
+    key: "{{ lookup('file', '/home/{{ user }}/.ssh/id_rsa.pub') }}"
