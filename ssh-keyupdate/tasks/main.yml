@@ -1,14 +1,14 @@
 ---
-- name: create dir if it doesnt exists
+- name: create {{user}}/.ssh/ directory if it doesn't exists
   file:
    path: /home/{{ user }}/.ssh/
    state: directory
 
-- name: creare autherization key
+- name: creare autherization key if it Doesnt Exists. 
   copy:
    content: ""
    dest: /home/{{ user }}/.ssh/authorized_keys
-   force: no
+   force: no # skip if the file alreday Exists
       
 - name: copy the new keyfile to hosts
   copy:

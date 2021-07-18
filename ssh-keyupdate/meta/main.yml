@@ -1,7 +1,7 @@
 galaxy_info:
-  author: your name
-  description: your role description
-  company: your company (optional)
+  author: Koti Pasupureddy
+  description: This Ansible Role is to update and Autorize SSH on Host Machines
+  company: AIA
 
   # If the issue tracker for your role is not on github, uncomment the
   # next line and provide a value
