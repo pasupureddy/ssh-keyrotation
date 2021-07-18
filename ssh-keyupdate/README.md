@@ -1,7 +1,7 @@
-Role Name
+SSH KEY Rotation
 =========
 
-A brief description of the role goes here.
+This is ansible role that enables you to rotate ssh keys on your remote servers. 
 
 Requirements
 ------------
